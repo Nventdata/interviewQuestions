@@ -1,7 +1,7 @@
 #Overview
 This task will test several areas
 * Your ability to use Docker and set up Kafka (DevOps)
-* Your ability to learn and use Storm and Flink (Java)
+* Your ability to learn and use Storm or Flink (Java)
 * Your ability to analyze performance (Performance analysis)
 * Your ability to use a git workflow (Version Control)
 * Your ability to automate running/building (Automation)
@@ -14,6 +14,8 @@ This task will test several areas
 
 #Working/Sharing
 * Fork this repo into your own git repo
+* Make this repo PRIVATE
+* Give read access to smorin and kingofpoptart to this repo
 * Check your code into your repo, this is how we will share and look at your code during your demo
 
 #Setup Requirements
@@ -44,16 +46,19 @@ optional arguments:
 
 
 #Programming assignment (Java)
+* You will choose **one** of the following:
+  * Create a Storm topology
+  * Create a flink stream
 * Set up your project in Eclipse
 * Use the KafkaGenerator python script to push data into Kafka
-* Create a Storm topology to move data out of the "neverwinter" topic in Kafka
+* **Option 1**: Create a Storm topology to move data out of the "neverwinter" topic in Kafka
   * https://storm.apache.org/
   * The data will be read from the topic "neverwinter"
   * Storm will write the data back into Kafka to three topics based on the field in avro called "random"
     * Messages with the "random" field set to "1" will be moved to topic "random1"
     * Messages with the "random" field set to "2" will be moved to topic "random2"
     * Messages with the "random" field set to "3" will be moved to topic "random3"
-* Perform the same task as above using Flink
+* **Option 2** : Perform the same task as above using Flink
   * https://flink.apache.org/
 * Verification - Within your Storm/Flink solutions:
   * Verify that all the records have made it to the topics "random[1-3]"
@@ -61,7 +66,6 @@ optional arguments:
 * Include metrics in your code
   * Determine the throughput of your system in bytes/second
   * Determine the rate of records/second
-  * Determine which is faster - Storm or Flink
 * Automation
   * Building and running should be automated and simple
 
